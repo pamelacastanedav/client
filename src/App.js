@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Link, Switch, Route, Redirect } from "react-router-dom";
+import Main from "./components/Main";
+import Create from "./components/Create";
+import ShowOnw from "./components/ShowOne";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Notes!</h1>
+      <Link to="/">Home</Link> &nbsp;&nbsp;
+      <Link to="/notes/new">Create</Link>
+      <Switch>
+        <Route path="/notes/new">
+          <Create />
+        </Route>
+        {/* <Route paht="/note/:id">
+          <ShowOne />
+        </Route> */}
+        <Route path="/notes">
+          <Main />
+        </Route>
+
+        {/* Main Route */}
+        <Route path="/">
+          <Redirect to="/notes" />
+        </Route>
+      </Switch>
     </div>
   );
 }

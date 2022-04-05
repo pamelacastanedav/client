@@ -1,0 +1,10 @@
+.note {
+  width: 55%;
+  display: inline-block;
+  background-color: rgb(251 231 87);
+  margin: 30px;
+  border-style: inset;
+}
+button {
+  box-shadow: black;
+}
